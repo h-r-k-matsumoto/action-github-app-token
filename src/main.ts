@@ -15,6 +15,13 @@ async function run(): Promise<void> {
       baseUrl: process.env['GITHUB_API_URL'] || 'https://api.github.com',
     });
 
+    console.log("---------------------");
+    console.log(process.env['GITHUB_API_URL'] || 'https://api.github.com');
+    console.log(appOctokit.baseUrl);
+    console.log(appOctokit.request.endpoint);
+    console.log(appOctokit.request.endpoint);
+    console.log("---------------------");
+
     const {data} = await appOctokit.apps.listInstallations();
 
     const resp = await appOctokit.auth({
